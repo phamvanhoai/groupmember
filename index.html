@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+
+        <!--
+ Theme Name:   Member Group
+ Description:  Member Group
+ Author:       PhamVanHoai
+ Author URI:   https://it.id.vn
+ Version:      1.0
+-->
+        <title>Group 2 Members | FPT CT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style type="text/css">
+            body {
+                margin-top: 20px;
+            }
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            .pt-5 {
+                padding-top: 3rem !important;
+            }
+            .my-5 {
+                margin-top: 3rem !important;
+                margin-bottom: 3rem !important;
+            }
+            .border-0 {
+                border: 0 !important;
+            }
+            .position-relative {
+                position: relative !important;
+            }
+            .shadow-lg {
+                box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
+            }
+            .card {
+                position: relative;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: 1px solid rgba(0, 0, 0, 0.125);
+                border-radius: 0.25rem;
+            }
+
+            .member-profile {
+                top: -50px;
+                left: 0;
+            }
+            .text-center {
+                text-align: center !important;
+            }
+            .w-100 {
+                width: 100% !important;
+            }
+            .position-absolute {
+                position: absolute !important;
+            }
+
+            .member-profile img {
+                width: 100px;
+                height: 100px;
+            }
+            .rounded-circle {
+                border-radius: 50% !important;
+            }
+            .mx-auto {
+                margin-right: auto !important;
+                margin-left: auto !important;
+            }
+            .shadow-sm {
+                box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+            }
+        </style>
+
+        <!-- Start -->
+
+        <script type="text/javascript">
+            document.write(
+                '<style type="text/css">body{padding-bottom:20px}</style><a target="_blank"><img style="position:fixed;z-index:9999;top:0;left:0" src="https://anonyviet.com/resource/tet/banner_left.png" _cke_saved_src="https://anonyviet.com/resource/tet/banner_left.png"/></a><a target="_blank"><img style="position:fixed;z-index:9999;top:0;right:0" src="https://anonyviet.com/resource/tet/banner_right.png"/></a><div style="position:fixed;z-index:9999;bottom:-50px;left:0;width:100%;height:104px;"></div><a target="_blank"><img style="position:fixed;z-index:9999;bottom:20px;left:20px" src="https://anonyviet.com/resource/tet/banner_header.png"/></a>'
+            );
+            var no = 100;
+            var hidesnowtime = 0;
+            var snowdistance = "pageheight";
+            var ie4up = document.all ? 1 : 0;
+            var ns6up = document.getElementById && !document.all ? 1 : 0;
+            function iecompattest() {
+                return document.compatMode && document.compatMode != "BackCompat" ? document.documentElement : document.body;
+            }
+            var dx, xp, yp;
+            var am, stx, sty;
+            var i,
+                doc_width = 800,
+                doc_height = 600;
+            if (ns6up) {
+                doc_width = self.innerWidth;
+                doc_height = self.innerHeight;
+            } else if (ie4up) {
+                doc_width = iecompattest().clientWidth;
+                doc_height = iecompattest().clientHeight;
+            }
+            dx = new Array();
+            xp = new Array();
+            yp = new Array();
+            am = new Array();
+            stx = new Array();
+            sty = new Array();
+            for (i = 0; i < no; ++i) {
+                dx[i] = 0;
+                xp[i] = Math.random() * (doc_width - 50);
+                yp[i] = Math.random() * doc_height;
+                am[i] = Math.random() * 20;
+                stx[i] = 0.02 + Math.random() / 10;
+                sty[i] = 0.7 + Math.random();
+                if (ie4up || ns6up) {
+                    document.write('<div id="dot' + i + '" style="POSITION:absolute;Z-INDEX:' + i + ';VISIBILITY:visible;TOP:15px;LEFT:15px;"><span style="font-size:18px;color:#fff">*</span><\/div>');
+                }
+            }
+            function snowIE_NS6() {
+                doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+                doc_height =
+                    window.innerHeight && snowdistance == "windowheight"
+                        ? window.innerHeight
+                        : ie4up && snowdistance == "windowheight"
+                        ? iecompattest().clientHeight
+                        : ie4up && !window.opera && snowdistance == "pageheight"
+                        ? iecompattest().scrollHeight
+                        : iecompattest().offsetHeight;
+                for (i = 0; i < no; ++i) {
+                    yp[i] += sty[i];
+                    if (yp[i] > doc_height - 50) {
+                        xp[i] = Math.random() * (doc_width - am[i] - 30);
+                        yp[i] = 0;
+                        stx[i] = 0.02 + Math.random() / 10;
+                        sty[i] = 0.7 + Math.random();
+                    }
+                    dx[i] += stx[i];
+                    document.getElementById("dot" + i).style.top = yp[i] + "px";
+                    document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
+                }
+                snowtimer = setTimeout("snowIE_NS6()", 10);
+            }
+            function hidesnow() {
+                if (window.snowtimer) {
+                    clearTimeout(snowtimer);
+                }
+                for (i = 0; i < no; i++) document.getElementById("dot" + i).style.visibility = "hidden";
+            }
+            if (ie4up || ns6up) {
+                snowIE_NS6();
+                if (hidesnowtime > 0) setTimeout("hidesnow()", hidesnowtime * 1000);
+            }
+        </script>
+
+        <!-- End -->
+
+        <script type="text/javascript" src="https://hocban.vn/wp-content/uploads/TrangTriTet2018/phaohoa.js"></script>
+    </head>
+    <body>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/svg-with-js.min.css"
+            integrity="sha512-W3ZfgmZ5g1rCPFiCbOb+tn7g7sQWOQCB1AkDqrBG1Yp3iDjY9KYFh/k1AWxrt85LX5BRazEAuv+5DV2YZwghag=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <section class="team-section py-5">
+            <div class="glitch-wrapper">
+                <div class="glitch" data-glitch="GROUP 2 - SE1817">GROUP 2 - SE1817</div>
+            </div>
+
+            <style>
+                .glitch-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    background-color: rgba(33, 33, 33, 0);
+                }
+
+                .glitch {
+                    position: relative;
+                    font-size: 80px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: #000000;
+                    letter-spacing: 5px;
+                    z-index: 1;
+                }
+
+                .glitch:before,
+                .glitch:after {
+                    display: block;
+                    content: attr(data-glitch);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0.8;
+                }
+
+                .glitch:before {
+                    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+                    color: #0ff;
+                    z-index: -1;
+                }
+
+                .glitch:after {
+                    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+                    color: #ff00ff;
+                    z-index: -2;
+                }
+
+                @keyframes glitch-color {
+                    0% {
+                        transform: translate(0);
+                    }
+
+                    20% {
+                        transform: translate(-3px, 3px);
+                    }
+
+                    40% {
+                        transform: translate(-3px, -3px);
+                    }
+
+                    60% {
+                        transform: translate(3px, 3px);
+                    }
+
+                    80% {
+                        transform: translate(3px, -3px);
+                    }
+
+                    to {
+                        transform: translate(0);
+                    }
+                }
+            </style>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <div class="card border-0 shadow-lg pt-5 my-5 position-relative">
+                            <div class="card-body p-4">
+                                <div class="member-profile position-absolute w-100 text-center">
+                                    <img class="rounded-circle mx-auto d-inline-block shadow-sm" src="/team1.jpg" alt />
+                                </div>
+                                <div class="card-text pt-1">
+                                    <h5 class="member-name mb-0 text-center text-primary font-weight-bold">
+                                        Phạm Văn Hoài
+                                        <svg viewBox="0 0 12 13" width="16" height="16" fill="currentColor" title="Tài khoản đã xác minh" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--accent);">
+                                            <title>Tài khoản đã xác minh</title>
+                                            <g fill-rule="evenodd" transform="translate(-98 -917)">
+                                                <path
+                                                    d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </h5>
+                                    <div class="mb-3 text-center">Coder</div>
+                                    <div>
+                                        <p><b>Quê quán:</b> Sóc Trăng</p>
+                                        <p><b>Sở thích:</b> Chơi đàn, ăn uống.</p>
+                                        <p><b>Ưu điểm:</b> Nhiệt tình, thân thiện.</p>
+                                        <p><b>Nhược điểm:</b> Nói nhiều.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer theme-bg-primary border-0 text-center">
+                                <ul class="social-list list-inline mb-0 mx-auto">
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="https://www.facebook.com/karaokehoaipham/">
+                                            <svg
+                                                class="svg-inline--fa fa-facebook-f fa-w-10 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="facebook-f"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 320 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-twitter fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="twitter"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="https://github.com/phamvanhoai">
+                                            <svg
+                                                class="svg-inline--fa fa-github fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="github"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 496 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card border-0 shadow-lg pt-5 my-5 position-relative">
+                            <div class="card-body p-4">
+                                <div class="member-profile position-absolute w-100 text-center">
+                                    <img class="rounded-circle mx-auto d-inline-block shadow-sm" src="/team5.jpg" alt />
+                                </div>
+                                <div class="card-text pt-1">
+                                    <h5 class="member-name mb-0 text-center text-primary font-weight-bold">
+                                        Nguyễn Chí Dương (Leader)
+                                        <svg viewBox="0 0 12 13" width="16" height="16" fill="currentColor" title="Tài khoản đã xác minh" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--accent);">
+                                            <title>Tài khoản đã xác minh</title>
+                                            <g fill-rule="evenodd" transform="translate(-98 -917)">
+                                                <path
+                                                    d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </h5>
+                                    <div class="mb-3 text-center">Leader</div>
+                                    <div>
+                                        <p><b>Quê quán:</b> Ngã Năm, (Sóc trăng)</p>
+                                        <p><b>Sở thích:</b> Du lịch, ăn uống, xem phim</p>
+                                        <p><b>Ưu điểm: </b>vui vẻ, hòa đồng, thích giúp đỡ mọi người</p>
+                                        <p><b>Nhược điểm:</b> hay quên, hay nói dối.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer theme-bg-primary border-0 text-center">
+                                <ul class="social-list list-inline mb-0 mx-auto">
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-linkedin-in fa-w-14 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="linkedin-in"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-twitter fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="twitter"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-github fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="github"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 496 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-lg pt-5 my-5 position-relative">
+                            <div class="card-body p-4">
+                                <div class="member-profile position-absolute w-100 text-center">
+                                    <img class="rounded-circle mx-auto d-inline-block shadow-sm" src="/team2.jpg" alt />
+                                </div>
+                                <div class="card-text pt-1">
+                                    <h5 class="member-name mb-0 text-center text-primary font-weight-bold">
+                                        Nguyễn Phát Đạt
+                                        <svg viewBox="0 0 12 13" width="16" height="16" fill="currentColor" title="Tài khoản đã xác minh" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--accent);">
+                                            <title>Tài khoản đã xác minh</title>
+                                            <g fill-rule="evenodd" transform="translate(-98 -917)">
+                                                <path
+                                                    d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </h5>
+                                    <div class="mb-3 text-center">Member</div>
+                                    <div>
+                                        <p><b>Quê quán:</b> Đồng Tháp</p>
+                                        <p><b>Sở thích:</b> Du lịch, chơi thể thao.</p>
+                                        <p><b>Ưu điểm:</b> Nhiệt tình, thân thiện.</p>
+                                        <p><b>Nhược điểm:</b> Dễ mất tập trung.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer theme-bg-primary border-0 text-center">
+                                <ul class="social-list list-inline mb-0 mx-auto">
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-twitter fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="twitter"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-facebook-f fa-w-10 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="facebook-f"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 320 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-instagram fa-w-14 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="instagram"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-lg pt-5 my-5 position-relative">
+                            <div class="card-body p-4">
+                                <div class="member-profile position-absolute w-100 text-center">
+                                    <img class="rounded-circle mx-auto d-inline-block shadow-sm" src="/team3.jpg" alt />
+                                </div>
+                                <div class="card-text pt-1">
+                                    <h5 class="member-name mb-0 text-center text-primary font-weight-bold">
+                                        Lê Đăng Khoa
+                                        <svg viewBox="0 0 12 13" width="16" height="16" fill="currentColor" title="Tài khoản đã xác minh" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--accent);">
+                                            <title>Tài khoản đã xác minh</title>
+                                            <g fill-rule="evenodd" transform="translate(-98 -917)">
+                                                <path
+                                                    d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </h5>
+                                    <div class="mb-3 text-center">Member</div>
+                                    <div>
+                                        <p><b>Quê quán:</b> Sóc Trăng</p>
+                                        <p><b>Sở thích:</b> Xem Phim, chơi thể thao.</p>
+                                        <p><b>Ưu điểm:</b> Dễ gần, vui tính.</p>
+                                        <p><b>Nhược điểm:</b> Hơi bị dễ sao nhãn.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer theme-bg-primary border-0 text-center">
+                                <ul class="social-list list-inline mb-0 mx-auto">
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-twitter fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="twitter"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-instagram fa-w-14 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="instagram"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-lg pt-5 my-5 position-relative">
+                            <div class="card-body p-4">
+                                <div class="member-profile position-absolute w-100 text-center">
+                                    <img class="rounded-circle mx-auto d-inline-block shadow-sm" src="/team4.jpg" alt />
+                                </div>
+                                <div class="card-text pt-1">
+                                    <h5 class="member-name mb-0 text-center text-primary font-weight-bold">
+                                        Huỳnh Thái An
+                                        <svg viewBox="0 0 12 13" width="16" height="16" fill="currentColor" title="Tài khoản đã xác minh" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--accent);">
+                                            <title>Tài khoản đã xác minh</title>
+                                            <g fill-rule="evenodd" transform="translate(-98 -917)">
+                                                <path
+                                                    d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </h5>
+                                    <div class="mb-3 text-center">Member</div>
+                                    <div>
+                                        <p><b>Quê quán:</b> Trà Vinh</p>
+                                        <p><b>Sở thích:</b> Chơi games, chơi thể thao.</p>
+                                        <p><b>Ưu điểm:</b> Nhiệt tình, thân thiện</p>
+                                        <p><b>Nhược điểm:</b> hơi lơ là.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer theme-bg-primary border-0 text-center">
+                                <ul class="social-list list-inline mb-0 mx-auto">
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-twitter fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="twitter"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-github fa-w-16 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="github"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 496 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-dark" href="#">
+                                            <svg
+                                                class="svg-inline--fa fa-instagram fa-w-14 fa-fw"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fab"
+                                                data-icon="instagram"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                data-fa-i2svg
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"></script>
+    </body>
+</html>
